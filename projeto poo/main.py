@@ -10,5 +10,3 @@ gerenciador = Gerenciador_de_reservas(hotel1)
 gerenciador.verificador_disponibilidade()
 
 print(f"Total de quartos: {len(gerenciador.hotel.lista_de_quartos)}")
-
-# comentando para commit
