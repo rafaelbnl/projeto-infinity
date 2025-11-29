@@ -11,6 +11,7 @@ class Hotel(Estabelecimento):
         super().__init__(nome, logradouro, numero)
         self.rede = rede
         self.lista_de_quartos = []
+        self.lista_de_reservas = []
 
     def cadastrar_quarto(self):
         numero = int(input("Digite o número do quarto: "))

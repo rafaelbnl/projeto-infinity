@@ -26,12 +26,13 @@ class Pessoa():
         self.__email = novo_email
 
 class Cliente(Pessoa):
-    def __init__(self, nome, telefone, email, id: str):
+    def __init__(self, nome, telefone, email, id: int):
         super().__init__(nome, telefone, email)
         self.__id = id
 
     def get_id(self):
         return self.__id
     
-    def set_id():
+    def set_id(self):
+        """comentario"""
         return None
