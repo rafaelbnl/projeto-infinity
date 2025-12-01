@@ -54,11 +54,6 @@ class Gerenciador_de_reservas():
         dias = int(input("Digite a quantidade de dias da estadia: "))
         valor_total = quarto_selecionado.diaria * dias
 
-        
-        novo_id = random.randint(1000-9999)
-        self.lista_de_ids.append(novo_id)
-        while novo_id in self.lista_de_ids:
-            novo_id = random.randint(1000-9999)
             
 
         
@@ -67,7 +62,7 @@ class Gerenciador_de_reservas():
             "quarto": quarto_selecionado,
             "dias": dias,
             "valor_total": valor_total
-            "id": novo_id
+            "id": cliente["Nome"].get_id()
         }
         
         self.hotel.lista_de_reservas.append(reserva)
