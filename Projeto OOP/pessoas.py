@@ -34,5 +34,5 @@ class Cliente(Pessoa):
         return self.__id
     
     def set_id(self):
-        """comentario"""
+        """Não é possível mudar o ID único do hóspede"""
         return None
