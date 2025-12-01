@@ -76,46 +76,32 @@ def main():
         print(f"  Status: {reserva['quarto'].status}")
         print(f"  Dias: {reserva['dias']} | Valor Total: R${reserva['valor_total']:.2f}")
     
-    # Verificando disponibilidade após reservas
-    print("\n" + "=" * 50)
     print("VERIFICANDO DISPONIBILIDADE APÓS RESERVAS")
-    print("=" * 50)
     gerenciador.verificar_disponibilidade()
     
-    # Menu interativo
-    print("\n" + "=" * 50)
     print("MENU INTERATIVO")
-    print("=" * 50)
     
     while True:
-        print("\n" + "-" * 50)
-        print("OPÇÕES:")
         print("1 - Verificar disponibilidade")
         print("2 - Criar nova reserva")
         print("3 - Modificar reserva existente")
         print("4 - Cancelar reserva")
         print("5 - Listar todas as reservas")
         print("0 - Sair")
-        print("-" * 50)
         
         try:
             opcao = int(input("\nEscolha uma opção: "))
             
             match opcao:
                 case 1:
-                    print("\n" + "=" * 50)
                     gerenciador.verificar_disponibilidade()
                     
                 case 2:
-                    print("\n" + "=" * 50)
                     print("CRIAR NOVA RESERVA")
-                    print("=" * 50)
                     gerenciador.criar_reserva()
                     
                 case 3:
-                    print("\n" + "=" * 50)
                     print("MODIFICAR RESERVA")
-                    print("=" * 50)
                     if not hotel.lista_de_reservas:
                         print("Nenhuma reserva cadastrada.")
                     else:
