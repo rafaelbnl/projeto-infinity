@@ -34,8 +34,6 @@ class Cliente(Pessoa):
         return self.__id
     
     def set_id(self):
-        novo_id = random.randint(1000-9999)
-        self.lista_de_ids.append(novo_id)
-        while novo_id in self.lista_de_ids:
-            novo_id = random.randint(1000-9999)
+        """Não é possível alterar o ID"""
+        return None
             
