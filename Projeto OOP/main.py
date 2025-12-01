@@ -4,19 +4,13 @@ from pessoas import *
 from quartos import *
 
 def main():
-    # Criando o hotel
-    print("=" * 50)
     print("SISTEMA DE GERENCIAMENTO DE HOTEL")
-    print("=" * 50)
     
-    hotel = Hotel("Refúgio dos Sonhos", "Rua das Flores", 123, "Accor")
-    print(f"\nHotel criado: {hotel.nome}")
+    hotel = Hotel(nome="Refúgio dos Sonhos", logradouro="Rua das Flores", numero=123, rede="Accor")
+    print(f"Hotel criado: {hotel.nome}")
     print(f"Endereço: {hotel.logradouro}", {hotel.numero})
     
-    # Criando quartos
-    print("\n" + "=" * 50)
     print("CRIANDO QUARTOS")
-    print("=" * 50)
     
     quarto1 = Quarto(101, "single", 150.00, "Livre")
     quarto2 = Quarto(102, "double", 250.00, "Livre")
@@ -28,21 +22,15 @@ def main():
     hotel.cadastrar_quarto(quarto3)
     hotel.cadastrar_quarto(quarto4)
     
-    print(f"\nTotal de quartos cadastrados: {len(hotel.lista_de_quartos)}")
+    print(f"Total de quartos cadastrados: {len(hotel.lista_de_quartos)}")
     
-    # Criando gerenciador
     gerenciador = Gerenciador_de_reservas(hotel)
     
-    # Verificando disponibilidade
-    print("\n" + "=" * 50)
+ 
     print("VERIFICANDO DISPONIBILIDADE")
-    print("=" * 50)
     gerenciador.verificar_disponibilidade()
     
-    # Criando clientes manualmente para teste
-    print("\n" + "=" * 50)
     print("CRIANDO CLIENTES DE TESTE")
-    print("=" * 50)
     
     cliente1 = Cliente("João Silva", "(11) 98765-4321", "joao@email.com", 1001)
     cliente2 = Cliente("Maria Santos", "(11) 91234-5678", "maria@email.com", 1002)
@@ -50,11 +38,8 @@ def main():
     print(f"Cliente 1: {cliente1.get_nome()} | ID: {cliente1.get_id()}")
     print(f"Cliente 2: {cliente2.get_nome()} | ID: {cliente2.get_id()}")
     
-    # Criando reservas manualmente
-    print("\n" + "=" * 50)
     print("CRIANDO RESERVAS MANUALMENTE")
-    print("=" * 50)
-    
+     
     reserva1 = {
         "cliente": cliente1,
         "quarto": quarto1,
