@@ -33,9 +33,15 @@ class Gerenciador_de_reservas():
             print(f"Quarto {quarto.numero} | Tipo: {quarto.tipo.title()} | Diária: R${quarto.diaria:.2f}")
         
         nome = input("Digite o nome do cliente: ")
+        
         telefone = input("Digite o telefone do cliente: ")
+        
         email = input("Digite o email do cliente: ")
-        id_cliente = random.randint(1000, 9999)
+        while True:
+            id_cliente = random.randint(1000, 9999)
+            if id_cliente not in self.lista_de_ids:
+                self.lista_de_ids.append(id_cliente)
+                break
         
         cliente = Cliente(nome, telefone, email, id_cliente)
         self.lista_de_hospedes.append(cliente)
@@ -53,16 +59,12 @@ class Gerenciador_de_reservas():
         
         dias = int(input("Digite a quantidade de dias da estadia: "))
         valor_total = quarto_selecionado.diaria * dias
-
-            
-
         
         reserva = {
             "cliente": cliente,
             "quarto": quarto_selecionado,
             "dias": dias,
             "valor_total": valor_total
-            "id": cliente["Nome"].get_id()
         }
         
         self.hotel.lista_de_reservas.append(reserva)
