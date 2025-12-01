@@ -7,6 +7,7 @@ class Gerenciador_de_reservas():
     def __init__(self, hotel):
         self.hotel = hotel
         self.lista_de_hospedes = []
+        self.lista_de_ids = []
 
     def verificar_disponibilidade(self):
         quartos_livres = [q for q in self.hotel.lista_de_quartos if q.status == "Livre"]
@@ -52,12 +53,21 @@ class Gerenciador_de_reservas():
         
         dias = int(input("Digite a quantidade de dias da estadia: "))
         valor_total = quarto_selecionado.diaria * dias
+
+        
+        novo_id = random.randint(1000-9999)
+        self.lista_de_ids.append(novo_id)
+        while novo_id in self.lista_de_ids:
+            novo_id = random.randint(1000-9999)
+            
+
         
         reserva = {
             "cliente": cliente,
             "quarto": quarto_selecionado,
             "dias": dias,
             "valor_total": valor_total
+            "id": novo_id
         }
         
         self.hotel.lista_de_reservas.append(reserva)
