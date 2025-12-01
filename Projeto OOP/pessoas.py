@@ -34,5 +34,8 @@ class Cliente(Pessoa):
         return self.__id
     
     def set_id(self):
-        """Não é possível mudar o ID único do hóspede"""
-        return None
+        novo_id = random.randint(1000-9999)
+        self.lista_de_ids.append(novo_id)
+        while novo_id in self.lista_de_ids:
+            novo_id = random.randint(1000-9999)
+            
